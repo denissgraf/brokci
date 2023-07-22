@@ -26,6 +26,7 @@
       padding-top: 80px;
       position: relative;
       .filter-block {
+        min-height: 200px;
         width: inherit;
         padding: 30px 15px 15px;
         display: flex;
@@ -45,6 +46,207 @@
             margin: 10px 15px;
             display: flex;
             flex-direction: column;
+            .input-title {
+              margin-bottom: 5px;
+              color: #f8f9fad1;
+              font: 12px/14px "Helvetica Neue", Helvetica, Arial, sans-serif;
+            }
+            &.filter-input__radio {
+              .input-radio {
+                position: absolute;
+                z-index: -1;
+                opacity: 0;
+              }
+              .input-radio + label {
+                cursor: pointer;
+                display: inline-flex;
+                align-items: center;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                line-height: 21px;
+                vertical-align: top;
+                margin-left: 4px;
+                color: white;
+              }
+              .input-radio + label::before {
+                content: '';
+                display: inline-block;
+                width: 1em;
+                height: 1em;
+                flex-shrink: 0;
+                flex-grow: 0;
+                border: 1px solid white;
+                background: transparent;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                border-radius: 50%;
+                margin-right: 0.5em;
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 50% 50%;
+
+              }
+              .input-radio:checked + label::before {
+                box-shadow: 0 0 0 0.1rem var(--main-bg-color);
+                background-color: var(--main-bg-color);
+              }
+              .input-radio:not(:disabled):not(:checked) + label:hover::before {
+                border-color: white;
+              }
+              .input-radio:not(:disabled):active + label::before {
+                background-color: var(--main-bg-color);
+              }
+              .input-radio:focus + label::before {
+                box-shadow: 0 0 0 0.1rem var(--main-bg-color);
+              }
+              .input-radio:focus:not(:checked) + label::before {
+                box-shadow: 0 0 0 0.1rem var(--main-bg-color);
+              }
+              .input-radio:disabled + label::before {
+                background-color: gray;
+              }
+            }
+            &.filter-input__select {
+              position: relative;
+              input[type='text'] {
+                position: relative;
+                cursor: pointer;
+                display: inline-block;
+                vertical-align: middle;
+                font-size: 13px;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+                height: 34px;
+                line-height: 34px;
+                overflow: hidden;
+                padding: 0 0 0 8px;
+                border: 1px solid #aaa;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                -ms-border-radius: 5px;
+                -o-border-radius: 5px;
+                border-radius: 5px;
+                background-color: #fff;
+                background: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #fff), color-stop(50%, #f6f6f6), color-stop(52%, #eee), to(#f4f4f4));
+                background: linear-gradient(#fff 20%, #f6f6f6 50%, #eee 52%, #f4f4f4 100%);
+                background-clip: padding-box;
+                -webkit-box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 0 3px #fff inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+                color: #999;
+                text-decoration: none;
+                white-space: nowrap;
+                outline: none;
+                &:hover, &:focus {
+                  border: 1px solid #aaa;
+                  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(20%, #eee), color-stop(80%, #fff));
+                  background-image: linear-gradient(#eee 20%, #fff 80%);
+                  -webkit-box-shadow: 0 1px 0 var(--main-bg-color) inset;
+                  box-shadow: 0 1px 0 var(--main-bg-color) inset;
+                }
+              }
+              .select-arrow {
+                cursor: pointer;
+                width: 0;
+                height: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 8px solid gray;
+                position: absolute;
+                right: 10px;
+                top: 34px;
+                -webkit-transition: all .5s;
+                -moz-transition: all .5s;
+                -ms-transition: all .5s;
+                -o-transition: all .5s;
+                transition: all .5s;
+              }
+              .select-items {
+                display: none;
+              }
+              &.opened {
+                input[type='text'] {
+                  border-bottom-right-radius: 0;
+                  outline: none;
+                  border-bottom-left-radius: 0;
+                  -webkit-box-shadow: none;
+                  box-shadow: none;
+                  border: 1px solid #aaa;
+                }
+                .select-arrow {
+                  -webkit-transform: rotate(180deg);
+                  -moz-transform: rotate(180deg);
+                  -ms-transform: rotate(180deg);
+                  -o-transform: rotate(180deg);
+                  transform: rotate(180deg);
+                }
+                .select-items {
+                  position: absolute;
+                  display: block;
+                  top: 100%;
+                  background: white;
+                  width: inherit;
+                  right: 0;
+                  left: 0;
+                  border: 1px solid #aaa;
+                  .filter-input__search {
+                    position: relative;
+                    max-width: 100%;
+                    padding: 5px;
+                    display: flex;
+                    flex-direction: row;
+                    #items-search {
+                      max-width: 100%;
+                      -webkit-border-radius: 5px;
+                      -moz-border-radius: 5px;
+                      -ms-border-radius: 5px;
+                      -o-border-radius: 5px;
+                      border-radius: 5px;
+                      padding: 5px 10px 5px 5px;
+                      height: 16px;
+                    }
+                    .search-items-icon {
+                      position: absolute;
+                      right: 10px;
+                      top: 50%;
+                      transform: translateY(-50%);
+                    }
+                  }
+                  .select-items__wrapper {
+                    overflow-y: auto;
+                    max-height: 128px;
+                  }
+                  .select-item {
+                    cursor: pointer;
+                    margin: 0;
+                    padding: 5px 6px;
+                    list-style: none;
+                    line-height: 15px;
+                    font-size: 13px;
+                    word-wrap: break-word;
+                    -webkit-touch-callout: none;
+                    color: #444;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -ms-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                    &:hover {
+                      background-color: var(--main-bg-color);
+                      background-image: var(--primary-gradient-webkit);
+                      background-image: var(--primary-gradient);
+                      color: #fff;
+                    }
+                  }
+                }
+
+              }
+            }
           }
         }
       }

@@ -17,8 +17,14 @@
 
 :root {
   --filter-conteiner-bg-img: linear-gradient(#158edf75, #44a6e7d6), url('../img/brokci/city1.png');
+  --main-bg-color: #007bff;
+  --primary-gradient: linear-gradient(135deg,#007bff 69.91%,#0ac5dd);
+  --primary-gradient-webkit: -webkit-linear-gradient(135deg,#007bff 69.91%,#0ac5dd);
 }
 
+.hidden {
+  display: none !important;
+}
 
 html {
   border: 0;

@@ -12,4 +12,24 @@ $(document).ready(function() {
   }, 5000);
 
 
+
+  $(document).mouseup( function(e){ // событие клика по веб-документу
+    var div = $( ".filter-input__select.opened" ); // тут указываем ID элемента
+    if ( !div.is(e.target) // если клик был не по нашему блоку
+      && div.has(e.target).length === 0 ) { // и не по его дочерним элементам
+      div.removeClass('opened'); // скрываем его
+    }
+  });
+
+  $(document).on('click', '#checkOperation input', function() {
+    $(document).find('.filter-item.check-type[data-operation!="'+$(this).val()+'"]').addClass('hidden');
+    $(document).find('.filter-item.check-type[data-operation="'+$(this).val()+'"]').removeClass('hidden');
+  });
+
+  $(document).on('click', '.filter-input__select input[type="text"]', function() {
+    var selectBlock = $(this).parent();
+
+    selectBlock.toggleClass('opened');
+  });
+
 });

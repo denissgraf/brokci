@@ -32,18 +32,85 @@
       <div class="filter-block">
         <div class="filter-block__wrapper">
 
-          <div class="filter-item filter-input__radio">
+          <div class="filter-item filter-input__radio" id="checkOperation">
             <label class="input-title">Тип операции</label>
             <div class="input-radio__item">
-              <input class="custom-radio" name="OPERAT" type="radio" id="filter-operat-sell" value="sale">
+              <input class="input-radio" name="OPERAT" type="radio" id="filter-operat-sell" value="sale" checked>
               <label class="block-title-text" for="filter-operat-sell">Продажа</label>
             </div>
             <div class="input-radio__item">
-              <input class="custom-radio" name="OPERAT" type="radio" id="filter-operat-rent" value="rent">
+              <input class="input-radio" name="OPERAT" type="radio" id="filter-operat-rent" value="rent">
               <label class="block-title-text" for="filter-operat-rent">Аренда</label>
             </div>
           </div>
 
+          <div class="filter-item filter-input__select check-type" data-operation="sale">
+            <label class="input-title">Признак недвижимости</label>
+            <input type="text" name="CS_CATEGORY_LABEL" id="CS_CATEGORY_LABEL" value="(Нет данных)" readonly>
+            <input type="hidden" name="CS_CATEGORY" id="CS_CATEGORY" value="">
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="select-items__wrapper">
+                <div class="select-item" data-value="">(Нет данных)</div>
+                <div class="select-item" data-value="810">Вторичка</div>
+                <div class="select-item" data-value="812">Новостройка</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__select check-type hidden" data-operation="rent">
+            <label class="input-title">Тип аренды</label>
+            <input type="text" name="CS_RENT_TYPE_LABEL" id="CS_RENT_TYPE_LABEL" value="(Нет данных)" readonly>
+            <input type="hidden" name="CS_RENT_TYPE" id="CS_RENT_TYPE" value="">
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="select-items__wrapper">
+                <div class="select-item" data-value="">(Нет данных)</div>
+                <div class="select-item" data-value="2120">На длительный срок</div>
+                <div class="select-item" data-value="2122">Посуточно</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__select">
+            <label class="input-title">Тип недвижимости</label>
+            <input type="text" name="CS_OBJECT_TYPE_LABEL" id="CS_OBJECT_TYPE_LABEL" value="(Нет данных)" readonly>
+            <input type="hidden" name="CS_OBJECT_TYPE" id="CS_OBJECT_TYPE" value="">
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="filter-input__search">
+                <input type="text" id="items-search">
+                <span class="search-item-icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
+                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+                  </svg>
+                </span>
+              </div>
+              <div class="select-items__wrapper">
+                <div class="select-item" data-value="">(Нет данных)</div>
+                <div class="select-item" data-value="524">Квартира</div>
+                <div class="select-item" data-value="526">Комната</div>
+                <div class="select-item" data-value="528">Дом</div>
+                <div class="select-item" data-value="530">Таунхаус</div>
+                <div class="select-item" data-value="532">Дача</div>
+                <div class="select-item" data-value="534">Участок</div>
+                <div class="select-item" data-value="536">Коммерческий</div>
+                <div class="select-item" data-value="538">Гараж/паркинг</div>
+                <div class="select-item" data-value="1222">Коттедж</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__range">
+            <label class="input-title">Кол-во комнат</label>
+            <input type="number" name="ROOM_MIN" id="ROOM_MIN" value="" placeholder="от">
+            <input type="number" name="ROOM_MAX" id="ROOM_MAX" value="" placeholder="до">
+            <div class="filter-input__clear">
+              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+              </svg>
+            </div>
+          </div>
 
 
 
