@@ -44,4 +44,9 @@ $(document).ready(function() {
     $(this).parent().find('input').val('');
   });
 
+  // multiply filters
+  $(document).on('click', '', function() {
+
+  });
+
 });

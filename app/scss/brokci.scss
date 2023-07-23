@@ -34,13 +34,69 @@
         border-radius: 10px;
         backdrop-filter: blur(5px);
         background-color: #ffffff59;
+        .filter-block__wrapper {
+          z-index: 2;
+        }
+        .additional-filter__wrapper {
+          z-index: 1;
+          .filter-input__switcher {
+            margin-top: 34px !important;
+          }
+        }
+        .filter-item__result {
+          position: relative;
+          display: flex;
+          flex-direction: row;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin-top: 5px;
+          flex-wrap: wrap;
+          .result-item {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 4px;
+            border: 1px solid white;
+            border-radius: 50px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            .result-item__text {
+              color: white;
+            }
+            .result-item__remove {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
+              margin: 0 5px;
+              cursor: pointer;
+              svg {
+                fill: white;
+                -webkit-transition: all .5s;
+                -moz-transition: all .5s;
+                -ms-transition: all .5s;
+                -o-transition: all .5s;
+                transition: all .5s;
+              }
+              &:hover {
+                svg {
+                  fill: red;
+                }
+              }
+            }
+          }
+        }
         .filter-block__wrapper, .additional-filter__wrapper {
+
           display: flex;
           flex-direction: row;
           justify-content: flex-start;
           align-items: flex-start;
           flex-wrap: wrap;
           width: 100%;
+          position: relative;
           .filter-item {
             margin: 10px 15px;
             display: flex;
@@ -169,6 +225,78 @@
 
             }
             &.filter-input__select {
+              &.select-multi {
+                max-width: 180px;
+                .select-items {
+                  width: fit-content !important;
+                  min-width: calc(100% - 2px);
+                  top: 54px !important;
+                  z-index: 5;
+                  .select-item {
+                    position: relative;
+                    .input-radio {
+                      position: absolute;
+                      z-index: -1;
+                      opacity: 0;
+
+                    }
+                    label {
+                      white-space: nowrap;
+                    }
+                    .input-radio + label {
+                      cursor: pointer;
+                      display: inline-flex;
+                      align-items: center;
+                      justify-content: flex-start;
+                      -webkit-user-select: none;
+                      -moz-user-select: none;
+                      -ms-user-select: none;
+                      user-select: none;
+                      line-height: 21px;
+                      vertical-align: top;
+                      margin-left: 40px;
+                      color: #999;
+                    }
+                    .input-radio + label::before {
+                      content: '';
+                      position: absolute;
+                      top: 50%;
+                      margin-top: -7.5px;
+                      box-sizing: border-box;
+                      width: 30px;
+                      height: 15px;
+                      left: 5px;
+                      background: #fff;
+                      border: 1px solid #e4e3e1;
+                      border-radius: 15px;
+                      transition: all 200ms ease-out;
+
+                    }
+                    .input-radio + label::after {
+                      content: '';
+                      position: absolute;
+                      top: 50%;
+                      margin-top: -7.5px;
+                      box-sizing: border-box;
+                      width: 15px;
+                      height: 15px;
+                      left: 5px;
+                      background: #BDBDBD;
+                      border-radius: 50%;
+                      transition: all 200ms ease-out;
+
+                    }
+                    .input-radio:checked + label::after {
+                      left: 20px;
+                      background: var(--main-bg-color);
+                    }
+                    &:hover {
+                      background: none !important;
+
+                    }
+                  }
+                }
+              }
               position: relative;
               input[type='text'] {
                 position: relative;
@@ -416,7 +544,7 @@
           width: 100%;
           margin-left: 30px;
           &.submit-btns {
-            position: absolute;
+            position: relative;
             bottom: 0;
             right: 0;
             display: flex;
@@ -425,6 +553,7 @@
             margin-right: 30px;
             margin-bottom: 15px;
             max-width: fit-content;
+            max-width: 100%;
           }
           .filter-btn {
             border: 1px solid #fff;
