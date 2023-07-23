@@ -32,4 +32,16 @@ $(document).ready(function() {
     selectBlock.toggleClass('opened');
   });
 
+  function discharge(){
+    $('input.price-input').val(String($('input.price-input').val().replace(/[^0-9.]/g,'')).replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  }
+  discharge();
+  $('input.price-input').keyup(function(){
+    $(this).val(String($(this).val().replace(/[^0-9.]/g,'')).replace(/\B(?=(\d{3})+(?!\d))/g, " "));
+  });
+
+  $(document).on('click', '.range-items .filter-input__clear', function() {
+    $(this).parent().find('input').val('');
+  });
+
 });
