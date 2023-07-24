@@ -99,7 +99,7 @@
           width: 100%;
           position: relative;
           .filter-item {
-            margin: 10px 15px;
+            margin: 10px 5px;
             display: flex;
             flex-direction: column;
             .input-title {
@@ -544,7 +544,6 @@
           align-items: center;
           margin-top: 20px;
           width: 100%;
-          border-top: 1px solid white;
           padding-top: 15px;
           &.submit-btns {
             position: relative;
@@ -552,9 +551,74 @@
             right: 0;
             display: flex;
             flex-direction: row;
-            justify-content: flex-end;
+            justify-content: space-between;
             margin-bottom: 15px;
-            max-width: fit-content;
+            max-width: 100%;
+            border-top: 1px solid white;
+            .sort-block {
+              flex-grow: 1;
+              display: flex;
+              flex-direction: row;
+              justify-content: flex-start;
+              .sort-btn {
+                margin-right: 10px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 2px;
+                cursor: pointer;
+                background: #fff;
+                border-radius: 5px;
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 500;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                min-width: 34px;
+                height: 26px;
+                overflow: hidden;
+                transition: .3s;
+                input {
+                  display: none;
+                }
+                svg {
+                  text-decoration: none;
+                  width: 20px;
+                  height: 20px;
+                  max-height: 20px;
+                  padding: 3px;
+                  fill: #55555580;
+                  flex: 1 0 26px;
+                }
+                span {
+                  text-decoration: none;
+                  cursor: pointer;
+                  font-size: .6em!important;
+                  width: 0;
+                  overflow: hidden;
+                  margin-right: 3px;
+                  transition: .3s;
+                }
+                &:hover, &.current {
+                  background: #f3f4f5;
+                  color: #058df0;
+                  border: 1px solid #058df0;
+                  svg {
+                    fill: var(--main-bg-color);
+                  }
+                  span {
+                    text-decoration: none;
+                    width: 100%;
+                    /* min-width: 110px; */
+                    white-space: nowrap;
+                    transition: .3s;
+                    padding-right: 5px;
+                    color: var(--main-bg-color);
+                  }
+                }
+              }
+            }
+
           }
           .filter-btn {
             border: 1px solid #fff;
