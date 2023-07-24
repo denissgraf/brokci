@@ -45,8 +45,60 @@ $(document).ready(function() {
   });
 
   // multiply filters
-  $(document).on('click', '', function() {
+  $(document).on('click', '.select-item input', function() {
 
+    var el = $(this),
+      blkID = el.parent().parent().data('block'),
+      slct = $(document).find('.filter-item[data-id="'+blkID+'"]'),
+      resBlock = slct.find('.filter-item__result');
+
+    if (el.hasClass('input-radio')) {
+      if ($(this).is(':checked')) {
+        var resEl = '<div class="result-item" data-id="'+el.val()+'">' +
+          '                <span class="result-item__text">'+el.next().text()+'</span>' +
+          '                <span class="result-item__remove">' +
+          '                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">' +
+          '                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>' +
+          '                  </svg>' +
+          '                </span>' +
+          '              </div>';
+
+        resBlock.append(resEl);
+        console.log('checked '+el.val());
+      } else {
+        console.log('not checked '+el.val());
+        resBlock.find('.result-item[data-id="'+el.val()+'"]').remove();
+      }
+    }
+
+  });
+
+  // remove result item
+  $(document).on('click', '.result-item__remove', function(){
+    var itemID = $(this).parent().data('id');
+
+    $(document).find('.filter-item .input-radio[value="'+itemID+'"]').prop('checked', false);
+
+    $(this).parent().remove();
+  });
+
+  // search in select
+  $(document).on('keyup', '.items-search_input', function() {
+    var phrase = $(this).val().toLowerCase(),
+      selBlock = $(this).parent().parent().find('.select-items__wrapper');
+
+    selBlock.find('.select-item').each(function(el) {
+      var txtFind = $(this).find('.block-title-text').text().toLowerCase();
+
+      if (txtFind.indexOf(phrase) != -1) {
+        $(this).show();
+        console.log('yes '+txtFind);
+      } else {
+        $(this).hide();
+        console.log('no '+txtFind);
+      }
+
+    });
   });
 
 });

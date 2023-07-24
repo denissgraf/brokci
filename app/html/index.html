@@ -150,7 +150,7 @@
             </div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_CITY">
             <label class="input-title">Город</label>
             <input type="text" name="CS_CITY_LABEL" id="CS_CITY_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
@@ -164,7 +164,7 @@
                 </span>
               </div>
 
-              <div class="select-items__wrapper">
+              <div class="select-items__wrapper" data-block="CS_CITY">
                 <div class="select-item">
                   <input class="input-radio" name="CS_CITY[]" id="CS_CITY_1" type="checkbox" value="Москва">
                   <label class="block-title-text" for="CS_CITY_1">Москва</label>
@@ -193,14 +193,15 @@
                 </div>
               </div>
             </div>
+            <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_CITY_AREA">
             <label class="input-title">Район</label>
             <input type="text" name="CS_CITY_AREA_LABEL" id="CS_CITY_AREA_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
             <div class="select-items">
-              <div class="select-items__wrapper">
+              <div class="select-items__wrapper" data-block="CS_CITY_AREA">
                 <div class="select-item">
                   <input class="input-radio" name="CS_CITY_AREA[]" id="CS_CITY_AREA_1" type="checkbox" value="Москва">
                   <label class="block-title-text" for="CS_CITY_AREA_1">Москва</label>
@@ -229,42 +230,44 @@
                 </div>
               </div>
             </div>
+            <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_CONDITION">
             <label class="input-title">Ремонт</label>
-            <input type="text" name="CS_CITY_AREA_LABEL" id="CS_CITY_AREA_LABEL" value="(Нет данных)" readonly>
+            <input type="text" name="CS_CONDITION_LABEL" id="CS_CONDITION_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
             <div class="select-items">
-              <div class="select-items__wrapper">
+              <div class="select-items__wrapper" data-block="CS_CONDITION">
                 <div class="select-item">
-                  <input class="input-radio" name="CS_CITY_AREA[]" id="CS_CITY_AREA_0" type="checkbox" value="1356">
-                  <label class="block-title-text" for="CS_CITY_AREA_0">(Нет данных)</label>
+                  <input class="input-radio" name="CS_CONDITION[]" id="CS_CONDITION_0" type="checkbox" value="1356">
+                  <label class="block-title-text" for="CS_CONDITION_0">(Нет данных)</label>
                 </div>
                 <div class="select-item">
-                  <input class="input-radio" name="CS_CITY_AREA[]" id="CS_CITY_AREA_1356" type="checkbox" value="1356">
-                  <label class="block-title-text" for="CS_CITY_AREA_1356">Без отделки</label>
+                  <input class="input-radio" name="CS_CONDITION[]" id="CS_CONDITION_1356" type="checkbox" value="1356">
+                  <label class="block-title-text" for="CS_CONDITION_1356">Без отделки</label>
                 </div>
                 <div class="select-item">
-                  <input class="input-radio" name="CS_CITY_AREA[]" id="CS_CITY_AREA_1358" type="checkbox"
+                  <input class="input-radio" name="CS_CONDITION[]" id="CS_CONDITION_1358" type="checkbox"
                          value="1358">
-                  <label class="block-title-text" for="CS_CITY_AREA_1358">Черновая</label>
+                  <label class="block-title-text" for="CS_CONDITION_1358">Черновая</label>
                 </div>
                 <div class="select-item">
-                  <input class="input-radio" name="CS_CITY_AREA[]" id="CS_CITY_AREA_1360" type="checkbox"
+                  <input class="input-radio" name="CS_CONDITION[]" id="CS_CONDITION_1360" type="checkbox"
                          value="1360">
-                  <label class="block-title-text" for="CS_CITY_AREA_1360">Чистовая</label>
+                  <label class="block-title-text" for="CS_CONDITION_1360">Чистовая</label>
                 </div>
               </div>
             </div>
+            <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_HOUSE_TYPE">
             <label class="input-title">Тип здания</label>
             <input type="text" name="CS_HOUSE_TYPE_LABEL" id="CS_HOUSE_TYPE_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
             <div class="select-items">
-              <div class="select-items__wrapper">
+              <div class="select-items__wrapper" data-block="CS_HOUSE_TYPE">
                 <div class="select-item">
                   <input class="input-radio" name="CS_HOUSE_TYPE[]" id="CS_HOUSE_TYPE_0" type="checkbox" value="0">
                   <label class="block-title-text" for="CS_HOUSE_TYPE_0">(Нет данных)</label>
@@ -285,50 +288,187 @@
                 </div>
               </div>
             </div>
-            <div class="filter-item__result">
-              <div class="result-item" data-id="">
-                <span class="result-item__text">Test1</span>
-                <span class="result-item__remove">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                  </svg>
-                </span>
+            <div class="filter-item__result"></div>
+          </div>
+
+          <div class="filter-item filter-input__select select-multi" data-id="CS_ROOMS_TYPE">
+            <label class="input-title">Тип комнат</label>
+            <input type="text" name="CS_ROOMS_TYPE_LABEL" id="CS_ROOMS_TYPE_LABEL" value="Выбор вариантов" readonly>
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="select-items__wrapper" data-block="CS_ROOMS_TYPE">
+                <div class="select-item">
+                  <input class="input-radio" name="CS_ROOMS_TYPE[]" id="CS_ROOMS_TYPE_1444" type="checkbox" value="1444">
+                  <label class="block-title-text" for="CS_ROOMS_TYPE_1444">Смежные</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_ROOMS_TYPE[]" id="CS_ROOMS_TYPE_1446" type="checkbox" value="1446">
+                  <label class="block-title-text" for="CS_ROOMS_TYPE_1446">Изолированные</label>
+                </div>
               </div>
-              <div class="result-item" data-id="">
-                <span class="result-item__text">Test1</span>
-                <span class="result-item__remove">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                  </svg>
-                </span>
+            </div>
+            <div class="filter-item__result"></div>
+          </div>
+
+          <div class="filter-item filter-input__select select-multi" data-id="CS_WINDOWS_DIR">
+            <label class="input-title">Вид из окна</label>
+            <input type="text" name="CS_WINDOWS_DIR_LABEL" id="CS_WINDOWS_DIR_LABEL" value="Выбор вариантов" readonly>
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="select-items__wrapper" data-block="CS_WINDOWS_DIR">
+                <div class="select-item">
+                  <input class="input-radio" name="CS_WINDOWS_DIR[]" id="CS_WINDOWS_DIR_1350" type="checkbox" value="1350">
+                  <label class="block-title-text" for="CS_WINDOWS_DIR_1350">Во двор</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_WINDOWS_DIR[]" id="CS_WINDOWS_DIR_1352" type="checkbox" value="1352">
+                  <label class="block-title-text" for="CS_WINDOWS_DIR_1352">На улицу</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_WINDOWS_DIR[]" id="CS_WINDOWS_DIR_1354" type="checkbox" value="1354">
+                  <label class="block-title-text" for="CS_WINDOWS_DIR_1354">Во двор и на улицу</label>
+                </div>
               </div>
-              <div class="result-item" data-id="">
-                <span class="result-item__text">Test1</span>
-                <span class="result-item__remove">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                  </svg>
-                </span>
+            </div>
+            <div class="filter-item__result"></div>
+          </div>
+
+          <div class="filter-item filter-input__select select-multi" data-id="CS_BALCONY_TYPE">
+            <label class="input-title">Вид из окна</label>
+            <input type="text" name="CS_BALCONY_TYPE_LABEL" id="CS_BALCONY_TYPE_LABEL" value="Выбор вариантов" readonly>
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="select-items__wrapper" data-block="CS_BALCONY_TYPE">
+                <div class="select-item">
+                  <input class="input-radio" name="CS_BALCONY_TYPE[]" id="CS_BALCONY_TYPE_1326" type="checkbox" value="1326">
+                  <label class="block-title-text" for="CS_BALCONY_TYPE_1326">Балкон</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_BALCONY_TYPE[]" id="CS_BALCONY_TYPE_1328" type="checkbox" value="1328">
+                  <label class="block-title-text" for="CS_BALCONY_TYPE_1328">Лоджия</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_BALCONY_TYPE[]" id="CS_BALCONY_TYPE_1330" type="checkbox" value="1330">
+                  <label class="block-title-text" for="CS_BALCONY_TYPE_1330">Эркер</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_BALCONY_TYPE[]" id="CS_BALCONY_TYPE_1332" type="checkbox" value="1332">
+                  <label class="block-title-text" for="CS_BALCONY_TYPE_1332">Нет балкона</label>
+                </div>
               </div>
-              <div class="result-item" data-id="">
-                <span class="result-item__text">Test1</span>
-                <span class="result-item__remove">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                  </svg>
-                </span>
+            </div>
+            <div class="filter-item__result"></div>
+          </div>
+
+          <div class="filter-item filter-input__select select-multi" data-id="CS_WC">
+            <label class="input-title">Сан. узел</label>
+            <input type="text" name="CS_WC_LABEL" id="CS_WC_LABEL" value="Выбор вариантов" readonly>
+            <div class="select-arrow"></div>
+            <div class="select-items">
+              <div class="select-items__wrapper" data-block="CS_WC">
+                <div class="select-item">
+                  <input class="input-radio" name="CS_WC[]" id="CS_WC_1340" type="checkbox" value="1340">
+                  <label class="block-title-text" for="CS_WC_1340">Раздельный</label>
+                </div>
+                <div class="select-item">
+                  <input class="input-radio" name="CS_WC[]" id="CS_WC_1342" type="checkbox" value="1342">
+                  <label class="block-title-text" for="CS_WC_1342">Совмещенный</label>
+                </div>
               </div>
-              <div class="result-item" data-id="">
-                <span class="result-item__text">Test1</span>
-                <span class="result-item__remove">
-                  <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                  </svg>
-                </span>
+            </div>
+            <div class="filter-item__result"></div>
+          </div>
+
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Общая площадь</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="TOTAL_AREA_MIN" id="TOTAL_AREA_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="TOTAL_AREA_MAX" id="TOTAL_AREA_MAX" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
               </div>
             </div>
           </div>
 
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Жилая площадь</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="LIVE_AREA_MIN" id="LIVE_AREA_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="LIVE_AREA_MAX" id="LIVE_AREA_MAX" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Кухня</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="KITCHEN_AREA_MIN" id="KITCHEN_AREA_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="KITCHEN_AREA_MAX" id="KITCHEN_AREA_MAX" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Диапазон этажей</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="FLOOR_MIN" id="FLOOR_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="FLOOR_MAX" id="FLOOR_MAX" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Этажность дома</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="FLOORALL_MIN" id="FLOORALL_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="FLOORALL_MAX" id="FLOORALL_MAX" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Площадь участка</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="PLOT_AREA_MIN" id="PLOT_AREA_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="PLOT_AREA_MAX" id="PLOT_AREA_MAX" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <div class="filter-item filter-input__range range-small">
+            <label class="input-title">Год постройки</label>
+            <div class="range-items">
+              <input type="number" class="range-from" name="PLOT_AREA_MIN" id="YEAR_MIN" value="" min="0" placeholder="от">
+              <input type="number" class="range-to" name="PLOT_AREA_MAX" id="YEAR_MIN" value="" min="0" placeholder="до">
+              <div class="filter-input__clear">
+                <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512">
+                  <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
 
         </div>
 
