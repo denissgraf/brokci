@@ -17,8 +17,9 @@
     position: relative;
     width: 100%;
     height: calc(100vh - 70px);
+    padding-bottom: 200px;
     .filter-container-block {
-      max-width: 1200px;
+      width: 1200px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -88,6 +89,9 @@
               }
             }
           }
+        }
+        .additional-filter__wrapper {
+          display: none;
         }
         .filter-block__wrapper, .additional-filter__wrapper {
 
@@ -552,7 +556,6 @@
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            margin-bottom: 15px;
             max-width: 100%;
             border-top: 1px solid white;
             .sort-block {

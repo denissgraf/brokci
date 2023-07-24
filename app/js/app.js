@@ -44,6 +44,20 @@ $(document).ready(function() {
     $(this).parent().find('input').val('');
   });
 
+
+  $('.additional-filter__wrapper').hide();
+
+  // show/hide additionnal filters
+  $(document).on('click', '.filter-btn.additional-btn', function() {
+    if ($(this).hasClass('active')) {
+      $(this).removeClass('active');
+      $('.additional-filter__wrapper').hide();
+    } else {
+      $(this).addClass('active');
+      $('.additional-filter__wrapper').show();
+    }
+  });
+
   // multiply filters
   $(document).on('click', '.select-item input', function() {
 
