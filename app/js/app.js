@@ -3,6 +3,13 @@ AOS.init({
   duration: 1000,
 
 });
+
+// function change result in block
+function changeResult(block, blockTitle, blockItems) {
+
+}
+
+
 $(document).ready(function() {
 
 

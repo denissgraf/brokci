@@ -473,23 +473,58 @@
 
         </div>
 
+        <div class="filter-result-block">
+          <div class="result-block__title">Параметры фильтра</div>
+          <div class="result-block__items">
+            <div class="result__item" data-filter="1">
+              <div class="result-item__title">Заголовок</div>
+              <div class="result-values__block">
+                <div class="value__text" data-value="1">Значение фильтра 1</div>
+                <div class="value__text" data-value="2">Значение фильтра 2</div>
+                <div class="value__text" data-value="3">Значение фильтра 3</div>
+              </div>
+            </div>
+            <div class="result__item" data-filter="2">
+              <div class="result-item__title">Заголовок 2</div>
+              <div class="result-values__block">
+                <div class="value__text" data-value="1">Значение фильтра 1</div>
+                <div class="value__text" data-value="2">Значение фильтра 2</div>
+                <div class="value__text" data-value="3">Значение фильтра 3</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="filter-btns__wrapper submit-btns">
 
           <div class="sort-block">
-            <div class="sort-btn">
+            <div class="sort-btn" data-title="Карточки">
               <input class="view-btn" name="view-type" type="radio" value="card">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
                 <path d="M0 96l576 0c0-35.3-28.7-64-64-64H64C28.7 32 0 60.7 0 96zm0 32V416c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128H0zM64 405.3c0-29.5 23.9-53.3 53.3-53.3H234.7c29.5 0 53.3 23.9 53.3 53.3c0 5.9-4.8 10.7-10.7 10.7H74.7c-5.9 0-10.7-4.8-10.7-10.7zM176 192a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm176 16c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16zm0 64c0-8.8 7.2-16 16-16H496c8.8 0 16 7.2 16 16s-7.2 16-16 16H368c-8.8 0-16-7.2-16-16z"/>
               </svg>
-              <span class="btn-title">Карточки</span>
             </div>
-            <div class="sort-btn">
+            <div class="sort-btn" data-title="Таблица">
               <input class="view-btn" name="view-type" type="radio" value="table">
               <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
                 <path d="M0 96C0 60.7 28.7 32 64 32H512c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96zM128 288a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm32-128a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zM128 384a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm96-248c-13.3 0-24 10.7-24 24s10.7 24 24 24H448c13.3 0 24-10.7 24-24s-10.7-24-24-24H224zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H448c13.3 0 24-10.7 24-24s-10.7-24-24-24H224zm0 96c-13.3 0-24 10.7-24 24s10.7 24 24 24H448c13.3 0 24-10.7 24-24s-10.7-24-24-24H224z"/>
-              <svg>
-              <span class="btn-title">Таблица</span>
+              </svg>
             </div>
+            <div class="sort-select filter-input__select">
+              <input type="text" name="SORT_TITLE" id="SORT_TITLE" value="⬆ Цена" readonly>
+              <input type="hidden" name="SORT" id="SORT" value="price_asc">
+              <div class="select-arrow"></div>
+              <div class="select-items">
+                <div class="select-items__wrapper">
+                  <div class="select-item" data-value="price_desc">⬇  Цена</div>
+                  <div class="select-item" data-value="DATE_CREATE_ASC">⬆ Дата создания</div>
+                  <div class="select-item" data-value="DATE_CREATE_DESC">⬇ Дата создания</div>
+                  <div class="select-item" data-value="TIMESTAMP_X_ASC">⬆ Дата изменения</div>
+                  <div class="select-item" data-value="TIMESTAMP_X_DESC">⬇ Дата изменения</div>
+                </div>
+              </div>
+            </div>
+
           </div>
 
           <div class="filter-btn additional-btn" id="clearFilter">
