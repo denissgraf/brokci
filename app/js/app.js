@@ -4,8 +4,115 @@ AOS.init({
 
 });
 
+// get list values
+function getFilterVal(blockID) {
+  var blockList = $(document).find('.filter-item[data-id="'+blockID+'"]'),
+  blockName = blockList.find('.block-title-text').text(),
+  itemValue = {'name':blockName};
+
+  // check type of filter
+  if (blockList.hasClass('filter-input__switcher')) {
+    //get active switcher
+    itemValue['value'] = blockList.find('input:checked').data('value');
+  }
+console.log(itemValue);
+  // check is empty filter values
+  //$(document).find('.filter-item[data-id="'+blockID+'"]');
+
+
+
+  if (blockList.is(':empty')) {
+    console.log('Empty block');
+
+  } else {
+    console.log('has elements');
+  }
+}
+
+
 // function change result in block
-function changeResult(block, blockTitle, blockItems) {
+function changeResultFilter(blockID) {
+  console.log('Filter block');
+  console.log(blockID);
+  // check isset in results
+  var resBlock = $(document).find('.filter-result-block .result-block__items .result__item[data-filter="'+blockID+'"]'),
+    isEmptyFilter = true,
+    blockList = $(document).find('.filter-item[data-id="'+blockID+'"]'),
+    blockName = blockList.find('.block-title-text').text(),
+    itemValue = {'name':blockName, 'value': []};
+
+
+  // check filter
+
+  // check type of filter
+  if (blockList.hasClass('filter-input__switcher')) {
+    //get active switcher
+    if (blockList.find('input:checked').data('value') == undefined) {
+      itemValue['value'] = [];
+    } else {
+      itemValue['name'] = blockName;
+      itemValue['value'] = [blockList.find('input:checked').data('value')];
+    }
+  } else if (blockList.hasClass('filter-input__select')) {
+    if (blockList.hasClass('select-multi')) {
+      itemValue['name'] = blockList.find('.input-title').text();
+
+
+      blockList.find('.select-items__wrapper input:checked').each(function(key, val) {
+        itemValue['value'].push($(this).next().text());
+      });
+
+      console.log('select multi checked');
+      console.log(itemValue['value']);
+    }
+
+  }
+
+
+  // запихнуть в функцию
+
+  if (resBlock.length !== 0) {
+    if (itemValue['value'].length === 0) {
+      resBlock.remove();
+    } else {
+      resBlock.remove();
+      var resItemValues = '';
+
+      $.each(itemValue['value'], function(key, val) {
+        resItemValues = resItemValues + '<div class="value__text" data-value="'+blockID+'">'+val+'</div>';
+      });
+      var resItemBlock = '<div class="result__item" style="order:'+blockList.data('order')+'" data-filter="'+blockID+'">\n' +
+        '              <div class="result-item__title">'+itemValue['name']+'</div>\n' +
+        '              <div class="result-values__block">\n' + resItemValues +
+        '              </div>\n' +
+        '            </div>';
+      console.log(resItemBlock);
+      $(document).find('.filter-result-block .result-block__items').append(resItemBlock);
+
+    }
+
+  } else {
+    if (itemValue['value'].length !== 0) {
+      var resItemValues = '';
+
+      console.log('res');
+      console.log(itemValue['value']);
+
+      $.each(itemValue['value'], function(key, val) {
+        resItemValues = resItemValues + '<div class="value__text" data-value="'+blockID+'">'+val+'</div>';
+      });
+      var resItemBlock = '<div class="result__item" style="order:'+blockList.data('order')+'" data-filter="'+blockID+'">\n' +
+        '              <div class="result-item__title">'+itemValue['name']+'</div>\n' +
+        '              <div class="result-values__block">\n' + resItemValues +
+        '              </div>\n' +
+        '            </div>';
+      console.log(resItemBlock);
+      $(document).find('.filter-result-block .result-block__items').append(resItemBlock);
+    }
+
+  }
+
+
 
 }
 
@@ -53,15 +160,18 @@ $(document).ready(function() {
 
 
   $('.additional-filter__wrapper').hide();
+  $('.filter-result-block').show();
 
   // show/hide additionnal filters
   $(document).on('click', '.filter-btn.additional-btn', function() {
     if ($(this).hasClass('active')) {
       $(this).removeClass('active');
       $('.additional-filter__wrapper').hide();
+      $('.filter-result-block').show();
     } else {
       $(this).addClass('active');
       $('.additional-filter__wrapper').show();
+      $('.filter-result-block').hide();
     }
   });
 
@@ -91,6 +201,7 @@ $(document).ready(function() {
         resBlock.find('.result-item[data-id="'+el.val()+'"]').remove();
       }
     }
+    changeResultFilter(blkID);
 
   });
 
@@ -101,6 +212,13 @@ $(document).ready(function() {
     $(document).find('.filter-item .input-radio[value="'+itemID+'"]').prop('checked', false);
 
     $(this).parent().remove();
+  });
+
+
+  // on change switcher (YES/NO)
+  $(document).on('click', '.filter-input__switcher input', function() {
+    changeResultFilter($(this).prop('id'));
+
   });
 
   // search in select

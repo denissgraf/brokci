@@ -238,6 +238,9 @@
                   min-width: calc(100% - 2px);
                   top: 54px !important;
                   z-index: 5;
+                  border-bottom-left-radius: 5px;
+                  border-bottom-right-radius: 5px;
+
                   .select-item {
                     position: relative;
                     .input-radio {
@@ -386,6 +389,9 @@
                   right: 0;
                   left: 0;
                   border: 1px solid #aaa;
+                  border-bottom-left-radius: 5px;
+                  border-bottom-right-radius: 5px;
+
                   .filter-input__search {
                     position: relative;
                     max-width: 100%;
@@ -413,6 +419,7 @@
                     overflow-y: auto;
                     max-height: 128px;
                     width: 100%;
+
                   }
                   .select-item {
                     cursor: pointer;
@@ -446,7 +453,7 @@
                 flex-direction: row;
                 align-items: center;
                 justify-content: flex-start;
-                padding-right: 30px;
+                padding-right: 20px;
                 position: relative;
                 input[type='number'], input[type='text'] {
                   position: relative;
@@ -684,6 +691,9 @@
                   right: 0;
                   left: 0;
                   border: 1px solid #aaa;
+                  border-bottom-left-radius: 5px;
+                  border-bottom-right-radius: 5px;
+
                   .filter-input__search {
                     position: relative;
                     max-width: 100%;
@@ -711,6 +721,8 @@
                     overflow-y: auto;
                     max-height: 128px;
                     width: 100%;
+                    border-bottom-left-radius: 5px;
+                    border-bottom-right-radius: 5px;
                   }
                   .select-item {
                     cursor: pointer;
@@ -769,7 +781,6 @@
                 font-weight: 500;
                 flex-wrap: nowrap;
                 justify-content: flex-start;
-                overflow: hidden;
                 transition: .3s;
                 border: 1px solid transparent;
                 position: relative;
@@ -800,6 +811,7 @@
                     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
                     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
                     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+                    z-index: 10;
 
                   }
 
@@ -855,11 +867,11 @@
             }
             .btn-text {
               color: #ffff;
-              font-size: .8em!important;
+              font-size: 1em!important;
               font-weight: 500;
-              margin: 0 15px;
+              margin: 0 15px 0 10px;
             }
-            &:hover {
+            &:hover, &.active {
               background: var(--main-bg-color);
               .btn-icon:not(.not-rotate) {
                 -webkit-transform: rotate(180deg);

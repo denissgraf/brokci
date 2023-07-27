@@ -143,14 +143,14 @@
         </div>
 
         <div class="additional-filter__wrapper">
-          <div class="filter-item filter-input__switcher" id="hot">
+          <div class="filter-item filter-input__switcher" data-id="CS_HOT_OFFER" id="hot" data-order="1">
             <div class="input-radio__item">
-              <input class="input-radio" name="CS_HOT_OFFER" type="checkbox" id="CS_HOT_OFFER" checked>
+              <input class="input-radio" name="CS_HOT_OFFER" type="checkbox" id="CS_HOT_OFFER" data-value="Да" checked>
               <label class="block-title-text" for="CS_HOT_OFFER">Горячее предложение</label>
             </div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_CITY">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_CITY" data-order="2">
             <label class="input-title">Город</label>
             <input type="text" name="CS_CITY_LABEL" id="CS_CITY_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
@@ -196,7 +196,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_CITY_AREA">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_CITY_AREA" data-order="3">
             <label class="input-title">Район</label>
             <input type="text" name="CS_CITY_AREA_LABEL" id="CS_CITY_AREA_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
@@ -233,7 +233,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_CONDITION">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_CONDITION" data-order="4">
             <label class="input-title">Ремонт</label>
             <input type="text" name="CS_CONDITION_LABEL" id="CS_CONDITION_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
@@ -262,7 +262,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_HOUSE_TYPE">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_HOUSE_TYPE" data-order="5">
             <label class="input-title">Тип здания</label>
             <input type="text" name="CS_HOUSE_TYPE_LABEL" id="CS_HOUSE_TYPE_LABEL" value="(Нет данных)" readonly>
             <div class="select-arrow"></div>
@@ -291,7 +291,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_ROOMS_TYPE">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_ROOMS_TYPE" data-order="6">
             <label class="input-title">Тип комнат</label>
             <input type="text" name="CS_ROOMS_TYPE_LABEL" id="CS_ROOMS_TYPE_LABEL" value="Выбор вариантов" readonly>
             <div class="select-arrow"></div>
@@ -310,7 +310,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_WINDOWS_DIR">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_WINDOWS_DIR" data-order="7">
             <label class="input-title">Вид из окна</label>
             <input type="text" name="CS_WINDOWS_DIR_LABEL" id="CS_WINDOWS_DIR_LABEL" value="Выбор вариантов" readonly>
             <div class="select-arrow"></div>
@@ -333,7 +333,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_BALCONY_TYPE">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_BALCONY_TYPE" data-order="8">
             <label class="input-title">Тип балкона</label>
             <input type="text" name="CS_BALCONY_TYPE_LABEL" id="CS_BALCONY_TYPE_LABEL" value="Выбор вариантов" readonly>
             <div class="select-arrow"></div>
@@ -360,7 +360,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__select select-multi" data-id="CS_WC">
+          <div class="filter-item filter-input__select select-multi" data-id="CS_WC" data-order="9">
             <label class="input-title">Сан. узел</label>
             <input type="text" name="CS_WC_LABEL" id="CS_WC_LABEL" value="Выбор вариантов" readonly>
             <div class="select-arrow"></div>
@@ -379,7 +379,7 @@
             <div class="filter-item__result"></div>
           </div>
 
-          <div class="filter-item filter-input__range range-small">
+          <div class="filter-item filter-input__range range-small" data-id="TOTAL_AREA" data-order="10">
             <label class="input-title">Общая площадь</label>
             <div class="range-items">
               <input type="number" class="range-from" name="TOTAL_AREA_MIN" id="TOTAL_AREA_MIN" value="" min="0" placeholder="от">
@@ -476,22 +476,6 @@
         <div class="filter-result-block">
           <div class="result-block__title">Параметры фильтра</div>
           <div class="result-block__items">
-            <div class="result__item" data-filter="1">
-              <div class="result-item__title">Заголовок</div>
-              <div class="result-values__block">
-                <div class="value__text" data-value="1">Значение фильтра 1</div>
-                <div class="value__text" data-value="2">Значение фильтра 2</div>
-                <div class="value__text" data-value="3">Значение фильтра 3</div>
-              </div>
-            </div>
-            <div class="result__item" data-filter="2">
-              <div class="result-item__title">Заголовок 2</div>
-              <div class="result-values__block">
-                <div class="value__text" data-value="1">Значение фильтра 1</div>
-                <div class="value__text" data-value="2">Значение фильтра 2</div>
-                <div class="value__text" data-value="3">Значение фильтра 3</div>
-              </div>
-            </div>
           </div>
         </div>
 
